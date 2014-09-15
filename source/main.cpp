@@ -287,7 +287,7 @@ void UpdateMainMenu()
 {
 	DrawString("Insert Coins", iScreenWidth*0.37f, iScreenHeight * 0.5f);
 	DrawString("Credits", iScreenWidth * 0.41f, iScreenHeight * 0.4f);
-	for (int a_i = 250; a_i < 450; a_i = a_i + 2)
+	for (int a_i = 200; a_i < 480; a_i = a_i + 2)
 	{
 		DrawLine(200, a_i, 450, a_i, SColour(0x00, 0x00, 0x00, 0xFF)); //SCANLINES
 	}

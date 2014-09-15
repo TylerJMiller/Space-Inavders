@@ -194,6 +194,12 @@ bool CheckPointBox(Point2D p, Box2D b)
 	return false;
 }
 
+bool CheckLineLine(Line2D l1, Line2D l2)
+{
+	//if (l1.GetLength.Y() <
+	return false;
+}
+
 bool CheckBoxBox(Box2D b1, Box2D b2)
 {
 	if (CheckPointBox(b1.GetLeftBot(), b2) || CheckPointBox(b1.GetRightBot(), b2) || CheckPointBox(b1.GetRightTop(), b2) || CheckPointBox(b1.GetLeftTop(), b2))
