@@ -196,8 +196,7 @@ bool CheckPointBox(Point2D p, Box2D b)
 
 bool CheckLineLine(Line2D l1, Line2D l2)
 {
-	//if (l1.GetLength.Y() <
-	return false;
+	return false;											//DO THIS NEXT FOR REUSABILITY
 }
 
 bool CheckBoxBox(Box2D b1, Box2D b2)
