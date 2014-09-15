@@ -226,7 +226,6 @@ void CreateEnemies()				//DECLARING THE ENEMY CREATION
 	}
 }
 
-
 int main( int argc, char* argv[] )
 {	
     Initialise(iScreenWidth, iScreenHeight, false, gameTitle);
@@ -331,7 +330,6 @@ void UpdateGameState()				//UPDATING THE GAME STATE
 		DrawSprite(Aliens[i].iSpriteID);
 	}
 	
-
 	DrawString("SCORE < 1 >", iScreenWidth * 0.025f, iScreenHeight - 2);
 	DrawString("HI-SCORE", iScreenWidth * 0.4f, iScreenHeight - 2);
 	DrawString("SCORE < 2 >", iScreenWidth * 0.75f, iScreenHeight - 2);
