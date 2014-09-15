@@ -15,47 +15,45 @@ float fDeltaT;
 const char* pInvadersFont = "./fonts/invaders.fnt";
 float fKeyPastOne = 0, fKeyPastTwo = 0;
 
+//DECLARING STATES
 void Load();
 void UpdateGameState();
 void UpdateMainMenu();
 
-bool LineCircleCheck(float d, float f, float r)
-{
-	return true;
-}
 struct PlayerCannon					//CREATING A PLAYER
 {
+	//ALL PUBLICS BECAUSE WHO CARES RIGHT NOW I'M GOING TO REWRITE IT TOMORROW
 	unsigned int iSpriteID;
 	float Width;
 	float Height;
 	float x;
 	float y;
-	void SetSize(float a_fWidth, float a_fHeight)
+	void SetSize(float a_fWidth, float a_fHeight)		//SETTING THE SIZE
 	{
 		Width = a_fWidth;
 		Height = a_fHeight;
 	}
 
-	void SetPosition(float a_x, float a_y)
+	void SetPosition(float a_x, float a_y)			//SETTING THE POSITION
 	{
 		x = a_x;
 		y = a_y;
 	}
 
 	unsigned int iMoveLeftKey, iMoveRightKey;
-	void SetMovementKeys(unsigned int a_moveleft, unsigned int a_moveRight)
+	void SetMovementKeys(unsigned int a_moveleft, unsigned int a_moveRight)			//MOVEMENT KEYS
 	{
 		iMoveLeftKey = a_moveleft;
 		iMoveRightKey = a_moveRight;
 	}
 
 	unsigned int iLeftMovementExtreme, iRightMovementExtreme;
-	void SetMovementExtremes(unsigned int a_leftExtreme, unsigned int a_rightExtreme)
+	void SetMovementExtremes(unsigned int a_leftExtreme, unsigned int a_rightExtreme)			//EXTREMES
 	{
 		iLeftMovementExtreme = a_leftExtreme;
 		iRightMovementExtreme = a_rightExtreme;
 	}
-	void Move(float a_fTimeStep, float a_fSpeed)
+	void Move(float a_fTimeStep, float a_fSpeed)		//MOVEMENT CODE
 	{
 
 		/*if (IsKeyDown(iMoveLeftKey) && IsKeyDown(iMoveRightKey))
@@ -120,7 +118,7 @@ struct PlayerCannon					//CREATING A PLAYER
 		}
 		MoveSprite(iSpriteID, x, y);
 	}
-	Box2D GetBox2D()
+	Box2D GetBox2D()			//COLLISION
 	{
 		Box2D b(x, y, x + (.5f * Width), y + (.5f * Height));
 		//Box2D b(5, 5, 15, 15);
@@ -148,26 +146,27 @@ int FUCK(int FUCKING_NOTHING)		//GOD DAMNIT
 	FUCKING_NOTHING = 0;
 	return FUCKING_NOTHING;
 }
-struct Enemy						//I AM AN ENEMY
+struct Enemy						//ENEMY STRUCT
 {
-private:
+private:		//PRIVATES
 	float fWidth, fHeight, x, y;
 	unsigned int iLeftMovementExtreme, iRightMovementExtreme;
-public:
+public:			//PUBLICS
 	bool alive;
 	unsigned int iSpriteID;
 	float iDirection;
 
-	void SetLoc(float a_x, float a_y)
+	void SetLoc(float a_x, float a_y)		//SETTING THE LOCATION
 	{
 		x = a_x;
 		y = a_y;
 	}
-	void SetSize(float a_fWidth, float a_fHeight)
+	void SetSize(float a_fWidth, float a_fHeight)		//SETTING THE SIZE
 	{
 		fWidth = a_fWidth;
 		fHeight = a_fHeight;
 	}
+	//GETTING X AND Y
 	float GetX()
 	{
 		return x;
@@ -176,32 +175,31 @@ public:
 	{
 		return y;
 	}
-	void SetMovementExtremes(unsigned int a_leftExtreme, unsigned int a_rightExtreme)
+	void SetMovementExtremes(unsigned int a_leftExtreme, unsigned int a_rightExtreme)		//SETTING EXTREMES
 	{
 		iLeftMovementExtreme = a_leftExtreme;
 		iRightMovementExtreme = a_rightExtreme;
 	}
-	void GoForward(float a_DeltaT)
+	void GoForward(float a_DeltaT)				//GOING FORWARD
 	{
 		x += (a_DeltaT * iDirection * iScreenWidth);
 	}
-	bool SwitchCheck()
+	bool SwitchCheck()			//CHECKING EXTREMES AGAINST LOCATION
 	{
 		if (x < iLeftMovementExtreme || x > iRightMovementExtreme)
 			return true;
 		else
 			return false;
 	}
-	Box2D GetBox2D()
+	Box2D GetBox2D()			//COLLISION BOX
 	{
-		Box2D b(x, y, x + fWidth, y + fHeight);											//FIX ME TOO
-		//Box2D b(0, 0, 200, 200);
+		Box2D b(x, y, x + fWidth, y + fHeight);
 		return b;
 	}
 };
 Enemy Aliens[15];
 
-void CreateEnemies()				//CREATING THE ENEMIES
+void CreateEnemies()				//DECLARING THE ENEMY CREATION
 {
 	float fEnemyX = iScreenWidth * 0.2f;
 	float fEnemyY = iScreenHeight * 0.8f;
@@ -266,7 +264,7 @@ int main( int argc, char* argv[] )
 void Load()
 {
     SetBackgroundColour(SColour(0, 40, 0, 255));
-	iArcadeMarquee = CreateSprite("./images/marq.png", 750, 800, true);
+	iArcadeMarquee = CreateSprite("./images/oh-hi-marq.png", 750, 800, true);
 	MoveSprite(iArcadeMarquee, 330, 380);
 	player.SetSize(64.f, 32.f);
 	player.SetMovementKeys('Z', 'X');
@@ -295,16 +293,27 @@ void UpdateMainMenu()
 			{
 				eCurrentState = eGAMEPLAY;
 				CreateEnemies();
+				int dudeguy = CreateSprite("./images/dudeguy.png", iScreenWidth, iScreenHeight, true);
+				MoveSprite(dudeguy, iScreenWidth * 0.5f, iScreenHeight * 0.5f);
+				DrawSprite(dudeguy);
 			}
 	DrawSprite(iArcadeMarquee);
 };
 
 void UpdateGameState()				//UPDATING THE GAME STATE
 {
+	if (IsKeyDown(GLFW_KEY_S), IsKeyDown(GLFW_KEY_H), IsKeyDown(GLFW_KEY_I), IsKeyDown(GLFW_KEY_T))
+	{
+		int dudeguy = CreateSprite("./images/dudeguy.png", iScreenWidth, iScreenHeight, true);
+		MoveSprite(dudeguy, iScreenWidth * 0.5f, iScreenHeight * 0.5f);
+		DrawSprite(dudeguy);
+	}
 	player.Move(fDeltaT, 100);
 	MoveSprite(player.iSpriteID, player.x, player.y);
 	DrawSprite(player.iSpriteID);
+
 	bool EnemyTurn = false;
+
 	for (int i = 0; i < 15; i++)
 	{
 		if (Aliens[i].SwitchCheck())
@@ -321,6 +330,7 @@ void UpdateGameState()				//UPDATING THE GAME STATE
 		MoveSprite(Aliens[i].iSpriteID, Aliens[i].GetX(), Aliens[i].GetY());
 		DrawSprite(Aliens[i].iSpriteID);
 	}
+	
 
 	DrawString("SCORE < 1 >", iScreenWidth * 0.025f, iScreenHeight - 2);
 	DrawString("HI-SCORE", iScreenWidth * 0.4f, iScreenHeight - 2);
