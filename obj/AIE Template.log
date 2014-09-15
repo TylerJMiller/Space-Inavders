@@ -1,15 +1,16 @@
-﻿Build started 9/15/2014 10:16:40 AM.
+﻿Build started 9/15/2014 11:51:06 AM.
      1>Project "C:\Users\tyler.miller\Documents\GitHub\Space-Inavders\AIE Template.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I./ /I./include/ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\\" /Fd"obj\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\main.cpp
          main.cpp
-     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(213): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(212): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(219): warning C4305: '+=' : truncation from 'double' to 'float'
      1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(220): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(221): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(274): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(273): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(288): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(289): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(290): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(319): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(318): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(325): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(326): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(327): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(328): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
@@ -17,7 +18,6 @@
      1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(330): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(331): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(332): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\tyler.miller\documents\github\space-inavders\source\main.cpp(333): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\AIE Template_d.exe" /INCREMENTAL /NOLOGO /LIBPATH:./libs AIE_1st_Year_Framework_d.lib kernel32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"bin\AIE Template_d.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"bin\AIE Template_d.lib" /MACHINE:X86 obj\main.obj
          AIE_1st_Year_Framework_d.lib(SOIL.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
@@ -53,4 +53,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.52
+Time Elapsed 00:00:01.70

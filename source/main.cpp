@@ -21,7 +21,6 @@ void UpdateMainMenu();
 
 bool LineCircleCheck(float d, float f, float r)
 {
-
 	return true;
 }
 struct PlayerCannon					//CREATING A PLAYER
