@@ -123,7 +123,7 @@ struct PlayerCannon					//CREATING A PLAYER
 	}
 	Box2D GetBox2D()
 	{
-		Box2D b(x - (.5f * Width), y - (.5f * Height), x + Width, y + Height);
+		Box2D b(x, y, x + (.5f * Width), y + (.5f * Height));
 		//Box2D b(5, 5, 15, 15);
 		//return Box2D(5,5,15,15);
 		return b;
@@ -164,6 +164,11 @@ public:
 		x = a_x;
 		y = a_y;
 	}
+	void SetSize(float a_fWidth, float a_fHeight)
+	{
+		fWidth = a_fWidth;
+		fHeight = a_fHeight;
+	}
 	float GetX()
 	{
 		return x;
@@ -190,8 +195,8 @@ public:
 	}
 	Box2D GetBox2D()
 	{
-		//Box2D b(x, y, x + fWidth, y + fHeight);											//FIX ME TOO
-		Box2D b(0, 0, 200, 200);
+		Box2D b(x, y, x + fWidth, y + fHeight);											//FIX ME TOO
+		//Box2D b(0, 0, 200, 200);
 		return b;
 	}
 };
@@ -204,6 +209,7 @@ void CreateEnemies()				//CREATING THE ENEMIES
 	float fTempLeft = 0, fTempRight = 0;
 	for (int i = 0; i < 15; ++i)
 	{
+		Aliens[i].SetSize(32, 27);
 		Aliens[i].SetMovementExtremes(67 + fTempLeft, 288 + fTempRight);
 		Aliens[i].iSpriteID = CreateSprite("./images/invaders/invaders_1_00.png", 32, 27, true);
 		Aliens[i].iDirection = .05f;
